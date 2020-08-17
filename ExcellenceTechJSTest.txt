@@ -1,0 +1,162 @@
+Question 1
+Define an array of numbers (use any random numbers). Write a program in Javascript to print only the even numbers of the array. Do not use any library functions, need to do via for loops only
+
+function findEvenNum(objArray){
+var evenStr=";
+for(var index=0;index if(objArray[index]%2==0){
+evenStr= evenStr+objArray[index]+,";
+}
+}
+return evenStr.substring(0,evenStr.length-1);
+}
+
+
+Question 2
+Find the maximum consecutive 1's in an array of 0's and 1's.
+Example:
+a) 00110001001110 - Output :3 [Max num of consecutive 1's is 3]
+b) 1000010001 - Output :1 [Max num of consecutive 1's is 1]
+
+
+function findMaxOne(str){
+var totalCount = 0;
+var maxValue = 0;
+for (var i = 0; i < str.length; i++) {
+if (str.charAt(i) == '1') {
+maxValue++;
+}else {
+if (maxValue != 0) {
+if (totalCount < maxValue) {
+totalCount = maxValue;
+}
+maxValue = 0;
+}
+}
+}
+if (totalCount < maxValue) {
+totalCount = maxValue;
+}
+return totalCount;
+}
+
+
+Question 3
+Suppose you have an array of 101 integers. This array is already sorted and all numbers in this array are consecutive. Each number only occurs once in the array except one number which occurs twice. Write a js code to find the repeated number.
+e.g $arr = array(0,1,2,3,4,5,6,7,7,8,9,10...................);
+
+
+
+function findRepeatNum(arrayInt){
+var totalCount = 0;
+var maxValue = 0;
+for (var i = 0; i < arrayInt.length; i++) {
+if(arrayInt[i]!=&& arrayInt[i+1]!=){
+if (arrayInt[i] == arrayInt[i+1]){
+return arrayInt[i];
+}
+}
+}
+}
+
+Question 4
+Assume we have a form e.g
+<form>
+   <input type=”text” name=”firstname” />
+   <input type=”check” name=”checkme” />
+   <input type=”submit” value=”submit”
+</form>
+For the above form, write validation in javascript so that if the firstname is empty or if checkme is not checked, it will not allow the form to submit.
+
+
+function checkValidation(){
+var StudentName = document.getElementsByName(firstname).value;
+var checkBoxValue= document.getElementsByName(checkme).checked;
+if(StudentName=="){
+alert(Name should not be empty);
+}
+else if(checkBoxValue=false){
+alert(Check Box should be checked");
+}
+}
+
+
+Question 5
+Support you have a html tag like this 
+<div>Javascript Developer</div>
+Write a small html code to add a class on this div. Add a rounded border box on this div and also there should be a gap of 5px between the text and the rounded box and the text. 
+
+<html>
+<head>
+</head>
+<body onload="addClassOnDiv()">
+<div id="myDiv" class="divClass">Java script developer</div>
+<script type="text/javascript">
+function addClassOnDiv(){
+var myElementStyle = document.getElementById('myDiv').style;
+myElementStyle.borderRadius = 25px;
+myElementStyle.padding = 100px;
+myElementStyle.border= 1px solid black;
+myElementStyle.width= 11%;
+}
+</script>
+</body>
+</html>
+
+
+
+Question 6
+Write css to center a box on the page. Let’s see we have a blank empty page and we want to create a box of size 100px x 100px and it should be the center of the page always. How will you do it?
+
+
+
+
+<html>
+<head>
+</head>
+<body onload="addClassOnDiv()">
+<div id="myDiv" class="divClass"></div>
+<script type="text/javascript">
+function addClassOnDiv(){
+var myElementStyle = document.getElementById('myDiv').style;
+myElementStyle.height= 100px;
+myElementStyle.width= 100px;
+myElementStyle.border= 1px solid black;
+myElementStyle.position= fixed;
+myElementStyle.top= 50%;
+myElementStyle.left=50%;
+myElementStyle.transform= translate(-50%, -50%);
+
+}
+</script>
+</body>
+</html>
+
+
+
+
+Question 7
+Let’s see we an api url www.example.com/api/get/1 
+Write a sample code to call this url via ajax and print its response
+
+
+
+<html>
+<body>
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+<script>
+function loadDoc() {
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+document.getElementById(demo).innerHTML = this.responseText;
+}
+};
+xhttp.open(GET, www.example.com/api/get/1, true);
+xhttp.send();
+}
+</script>
+</body>
+</html>
+
+
